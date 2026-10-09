@@ -241,7 +241,7 @@
 
   function masthead() {
     const s = state.settings;
-    return `<header class="mast"><p class="eyebrow">Champ de Mars · Port Louis · Racing since 1812</p>
+    return `<header class="mast"><p class="eyebrow"><span class="nw">Champ de Mars</span> · <span class="nw">Port Louis</span> · <span class="nw">Racing since 1812</span></p>
       <h1>${esc(SITE)}</h1>${s.byline ? `<p class="byline">by ${esc(s.byline)}</p>` : ""}${s.intro ? `<p class="intro">${esc(s.intro)}</p>` : ""}</header>`;
   }
 
@@ -320,7 +320,7 @@
           ${m.going ? `<span class="tag">Going: ${esc(m.going)}</span>` : ""}</div>
         <h2 id="mtitle">${esc(fmtDate(m.date))}</h2>
         ${m.notes ? `<p class="mnotes">${esc(m.notes)}</p>` : ""}</div>
-      ${nap || nb ? `<div class="bets">${betCard("NAP", "Best bet of the day", nap, "nap")}${betCard("NB", "Next best", nb, "nb")}</div>` : ""}
+      ${nap || nb ? `<div class="bets">${betCard("NAP", "Best bet", nap, "nap")}${betCard("NB", "Next best", nb, "nb")}</div>` : ""}
       ${shareRow(m)}
       <ol class="races">${m.races.map((r, i) => raceRow(m, r, i)).join("")}</ol></section>`;
   }
